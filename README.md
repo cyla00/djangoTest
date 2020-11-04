@@ -30,9 +30,9 @@ login from the command line using ```$ psql -U USERNAME```and enter password, fr
 
 ## 3) creation and connection of a django project
 in the command line climb the path you want to put your project in and run ```$ django-admin startproject PROJECT_NAME```, a new folder named PROJECT_NAME and a ```./manage.py``` file are created.<br/>
-inside the folder there is a ```./settings.py``` file with a ```DATABASES``` variable, modify it depending on your [database type](https://docs.djangoproject.com/en/3.1/ref/settings/#databases);
+Inside the folder there is a ```./settings.py``` file with a ```DATABASES``` variable, modify it depending on your [database type](https://docs.djangoproject.com/en/3.1/ref/settings/#databases);
 
 ### -run the script
 to run the script climb to root path of your project folder where ```./manage.py``` is located and run ```$ python manage.py migrate```, after the migration run the server with ```$ python manage.py runserver```.
-* check log ```Starting development server at http://127.0.0.1:8000/``` (if running in local).
+* check log => ```Starting development server at http://127.0.0.1:8000/``` (if running in local).
 
