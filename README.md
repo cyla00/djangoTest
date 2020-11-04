@@ -29,7 +29,7 @@ optional => [debug toolBar](https://anaconda.org/conda-forge/django-debug-toolba
 login from the command line using ```$ psql -U USERNAME```and enter password, from there you can run commands to show lists of users ```$ \du``` or ```$ \?``` for the commands list.
 
 ## 3) creation and connection of a django project
-in the command line climb the path you want to put your project in and run ```$ django-admin startproject PROJECT_NAME```, a new folder named PROJECT_NAME and a ```./manage.py``` file are created.
+in the command line climb the path you want to put your project in and run ```$ django-admin startproject PROJECT_NAME```, a new folder named PROJECT_NAME and a ```./manage.py``` file are created.<br/>
 inside the folder there is a ```./settings.py``` file with a ```DATABASES``` variable, modify it depending on your [database type](https://docs.djangoproject.com/en/3.1/ref/settings/#databases);
 
 ### -run the script
