@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+
+    #own apps
+    'products'
 ]
 
 MIDDLEWARE = [
@@ -78,10 +81,10 @@ WSGI_APPLICATION = 'djangoTest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djangotest',
-        'USER': 'vytl',
-        'PASSWORD': 'vytl',
-        'HOST': '127.0.0.1',
+        'NAME': 'djangotestdb',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }

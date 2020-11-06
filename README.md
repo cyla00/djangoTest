@@ -36,3 +36,31 @@ Inside the folder there is a ```./settings.py``` file with a ```DATABASES``` var
 to run the script climb to root path of your project folder where ```./manage.py``` is located and run ```$ python manage.py migrate```, after the migration run the server with ```$ python manage.py runserver```.
 * check log => ```Starting development server at http://127.0.0.1:8000/``` (if running in local).
 
+## 4) start writing the app
+* The django file structure is basically a file "projects" that contains "apps", project urls.py is the one routing all the apps urls.py, and every app is responsible for a part of your site example: project=social network, apps=profile page/groups page/news page etc...<br/>
+![file structure](https://djangobook.com/wp-content/uploads/structure_drawing1_new.png "base django project structure")
+
+* create an app with: ```$ django manage.py startapp NAME_APP```<br/>
+to add the app at the main project, go to root path ./settings.py and under INSTALLED_APPS, add as an app the folder name of the app just created.
+
+## 5) app manipulation
+the app itself is devided in 2 main parts, the view.py and urls.py, the view manages your html page (graphics) the url manages all the routes of the app.
+example:
+```py
+#./view.py 
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def profile(request):
+    return HttpResponse("render here your html file") 
+```
+
+```py
+#./url.py 
+from django.urls import path, include
+from . import views
+
+urlpatterns = [
+    path('url_path/', views.profile) #now he know that if the url contains "url_path/", he will render the "profile" function in views.py.
+]
+```
