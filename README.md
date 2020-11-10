@@ -36,7 +36,7 @@ Inside the folder there is a ```./settings.py``` file with a ```DATABASES``` var
 to run the script climb to root path of your project folder where ```./manage.py``` is located and run ```$ python manage.py migrate```, after the migration run the server with ```$ python manage.py runserver```.
 * check log => ```Starting development server at http://127.0.0.1:8000/``` (if running in local).
 
-## 4) start writing the app
+## 4) start writing the project
 * The django file structure is basically a file "projects" that contains "apps", project urls.py is the one routing all the apps urls.py, and every app is responsible for a part of your site example: project=social network, apps=profile page/groups page/news page etc...<br/>
 ![file structure](https://djangobook.com/wp-content/uploads/structure_drawing1_new.png "base django project structure")
 
