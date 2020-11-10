@@ -79,7 +79,7 @@ html content
 ```
 extend to a main.html or base.html:<br/>
 ```
-{% extends 'main.html file' %}
+{% extends 'path of main.html' %}
 
 {% block BLOCK_NAME %} 
 
@@ -89,5 +89,5 @@ html content
 ```
 example add a pre-made header in main.html:<br/>
 ```
-{% include 'path of main.html' %}
+{% include 'path of header.html' %}
 ```
