@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product</title>
-</head>
-<body>
+    {% extends 'products/main.html' %}
+   
     {% block content %}
-    <h1>product html page title</h1>
+    
+    {% for element in products %}
+
+    <div>
+    <h3>title: {{element.title}}</h3>
+    <p>description: {{element.description}}</p>
+    <p>price: {{element.price}} eur</p>
+    </div>
+
+    {% endfor %}
+
     {% endblock content %}
-</body>
-</html>

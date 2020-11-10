@@ -52,7 +52,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def profile(request):
-    return HttpResponse("render here your html file") 
+    return HttpResponse("render here your html file") #or
+    return render('html file path')  
 ```
 
 ```py
@@ -63,4 +64,30 @@ from . import views
 urlpatterns = [
     path('url_path/', views.profile) #now he know that if the url contains "url_path/", he will render the "profile" function in views.py.
 ]
+```
+
+* the path of all the views will be: ```./templates/PROJECT_NAMED_FOLDER/html_files```, the templates folder should be created inside the application folder
+
+
+is possible to extend and modulate the html files using:
+```
+{% block BLOCK_NAME %} 
+
+html content 
+
+{% endblock %}
+```
+extend to a main.html or base.html:<br/>
+```
+{% extends 'main.html file' %}
+
+{% block BLOCK_NAME %} 
+
+html content 
+
+{% endblock %}
+```
+example add a pre-made header in main.html:<br/>
+```
+{% include 'path of main.html' %}
 ```
