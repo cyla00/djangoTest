@@ -51,10 +51,32 @@ example:
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def profile(request):
-    return HttpResponse("render here your html file") #or
-    return render('html file path')  
+def profile(request,):
+    return render(request, 'html file path')  
+
+#to add a context
+def profile(request, id):
+    id = database.objects.filter(id=id) #extracts the database object ID
+    return render(request, 'html file path', {'html_usable_variable':id}) 
 ```
+* all the CRUD and database operations are made from the view.py file passing the data into variables that later are reusable in the html files.
+
+example:
+```js
+#view.py
+    db_element = element.objects.all()
+```
+```html
+#html file
+<!-- extracting the titles from all rows "all()" -->
+{{for i in db_element}}
+
+    <h1>{{i.title}}</h1>
+
+{{endfor}}
+```
+check => [for more data filtering](https://docs.djangoproject.com/en/3.1/topics/db/queries/#retrieving-objects)
+
 
 ```py
 #./url.py 
@@ -62,7 +84,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('url_path/', views.profile) #now he know that if the url contains "url_path/", he will render the "profile" function in views.py.
+    path('url_path/<str:id>/', views.profile, name="name you can use as URL in <a href> tags") #now it knows that if the url contains "url_path/", it will render the "profile" function in views.py taking care of the variables you want to show in the browser url, in this case the "id" we have set in the view, put as a string "str".
 ]
 ```
 

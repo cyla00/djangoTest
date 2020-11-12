@@ -1,0 +1,20 @@
+{% extends 'products/main.html' %}
+
+{% block content %}
+
+    {% for element in single_product %}
+
+    <div style="text-align: center;">
+        <form method="POST" action="" style="text-align: center;">
+            <input type="text" name="title" value="{{element.title}}">
+            <input type="text" name="description" value="{{element.description}}">
+            <input type="text" name="price" value="{{element.price}}">
+            <input type="text" name="summary" value="{{element.summary}}">
+            <input type="submit" name="modify" value="modify">
+            <input type="submit" name="delete" value="delete">
+        </form>
+    </div>
+
+    {% endfor %}
+    
+{% endblock content %}

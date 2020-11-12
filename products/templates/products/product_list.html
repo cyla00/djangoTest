@@ -4,11 +4,17 @@
     
     {% for element in products %}
 
-    <div>
-    <h3>title: {{element.title}}</h3>
-    <p>description: {{element.description}}</p>
-    <p>price: {{element.price}} eur</p>
-    </div>
+        <table>
+            <tr>
+                <th>title</th>
+                <th>price</th>           
+            </tr>
+            <tr>
+                <td>{{element.title}}</td>
+                <td>{{element.price}}</td>
+                <td><a href="">show more</a></td>
+            </tr>
+        </table>
 
     {% endfor %}
 
